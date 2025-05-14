@@ -7,4 +7,5 @@ fun main() {
     println(jwt.getUserData().sub)
     println(jwt.getUserData().role)
     println(jwt.getUserData().exp)
+    println(jwt.getUserData().teams?.get(0))
 }

@@ -12,7 +12,7 @@ class Jwt(private val token: String) {
 
     @OptIn(ExperimentalEncodingApi::class, ExperimentalStdlibApi::class)
     private val userData: JsonObject by lazy {
-        val userData = String(Base64.getDecoder().decode(token.split(".")[1]))
+        val userData = String(Base64.getUrlDecoder().decode(token.split(".")[1]))
         JsonParser.parseString(userData).asJsonObject
     }
 
